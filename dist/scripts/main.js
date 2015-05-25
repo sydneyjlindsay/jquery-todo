@@ -22,14 +22,13 @@ function start(e) {
 
         var listHtml = render(list); 
         $list.html(listHtml); 
-
     }
 
-    $list.on('click', function(){
-        $("#list li").wrap("<strike>");
-        $("#list").fadeOut("slow");
-    });
+    $('#list').on('click', 'li', check);
 
+    function check() {
+        $(this).toggleClass('strikethrough');
+    }
 
     function render(todoList) {
         return '<ul><li>'+todoList.join('</li><li>')+'</li></ul>';
