@@ -19,6 +19,7 @@ function start(e) {
 
         list.push($inputBox.val());
         $inputBox.val('');
+        $inputBox.focus();
 
         var listHtml = render(list); 
         $list.html(listHtml); 
